@@ -3,9 +3,14 @@ var app = new Vue({
   data: {
     name: 'Cruiser',
     brand: 'Iron Horse',
-    description: 'True to its name, the Iron Horse Cruiser is an <i>experience and expression of freedom</i>.',
+    description:
+      'True to its name, the Iron Horse Cruiser is an <i>experience and expression of freedom</i>.',
     cart: 0,
-    features: ['1200CC Air-cooled Evolution Engine', 'Closed loop exhaust system', 'Chrome Details'],
+    features: [
+      '1200CC Air-cooled Evolution Engine',
+      'Closed loop exhaust system',
+      'Chrome Details'
+    ],
     specs: {
       engine: '1200cc',
       torque: '99 NM',
@@ -25,18 +30,21 @@ var app = new Vue({
       }
     ],
     selectedVariation: 0,
-    redButton: { backgroundColor: 'red' }
+    redButton: { backgroundColor: 'red' },
+    tabs: ['Features', 'Specs'],
+    selectedTab: 'Features'
   },
+
   computed: {
-    title: function () {
+    title: function() {
       return this.brand + ' - ' + this.name
     },
-    image: function () {
+    image: function() {
       return this.variations[this.selectedVariation].image
     }
   },
   methods: {
-    updateProduct: function (index) {
+    updateProduct: function(index) {
       this.selectedVariation = index
     }
   }
